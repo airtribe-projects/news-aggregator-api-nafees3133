@@ -22,8 +22,8 @@ const registerUserHandler = async (req, res) => {
         return res.status(400).send({message: "Invalid Email"});
     }
     console.log(user.password.length);
-    if (user.password.length < 10) {
-        return res.status(400).send({message: "Password must be at least 10 characters long"});
+    if (user.password.length < 8) {
+        return res.status(400).send({message: "Password must be at least 8 characters long"});
     }
     user.password = bcrypt.hashSync(user.password, saltRounds);
     const dbUser = await usersModel.create(user);

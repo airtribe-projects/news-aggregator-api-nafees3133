@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
             },
             languages: {
                 type: String,
-                enum: ["us"], // Define allowed languages
+                enum: ["us","en"], // Define allowed languages
                 // required: true, // Ensure it is always provided
             },
         },
